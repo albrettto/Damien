@@ -1,0 +1,534 @@
+@font-face {
+    font-family: "Manrope Regular";
+    src: url("/fonts/Manrope-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Manrope Medium";
+    src: url("/fonts/Manrope-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Manrope Bold";
+    src: url("/fonts/Manrope-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Manrope SemiBold";
+    src: url("/fonts/Manrope-SemiBold.ttf") format("truetype");
+}
+
+:root {
+    /* Absolute Colors */
+    --black-color: #000000;
+    --white-color: #ffffff;
+
+    /* Purple Shades */
+    --purple-55: #4A2cED;
+    --purple-60: #5E43EF;
+    --purple-70: #8672F3;
+    --purple-80: #AEA1F7;
+    --purple-90: #D6D0FB;
+    --purple-95: #EAE7FD;
+    --purple-97: #F3F1FE;
+    --purple-99: #FBFAFF;
+
+    /* Dark Shades */
+    --dark-03: #070708;
+    --dark-06: #0E0E10;
+    --dark-08: #131316;
+    --dark-12: #1C1C21;
+    --dark-15: #232329;
+    --dark-20: #2F2F37;
+    --dark-25: #3B3B45;
+    --dark-30: #474752;
+
+    /* Grey Shades */
+    --grey-40: #62646C;
+    --grey-50: #797C86;
+    --grey-70: #AFB0B6;
+    --grey-80: #CACACE;
+    --grey-90: #E4E4E6;
+    --grey-95: #F2F2F3;
+    --grey-97: #F7F7F8;
+    --grey-99: #FCFCFD;
+}
+
+body {
+    background-color: var(--black-color);
+    color: var(--white-color);
+    list-style-type: none;
+    font-family: "Manrope Regular", sans-serif;
+}
+
+/* Start Header */
+header {
+    border-bottom:  1px solid var(--dark-12);
+}
+
+.container {
+    margin: 0px 165px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .container{
+    margin: 0px 125px;
+    padding: 0 40px;
+    border-inline: 1px solid var(--dark-12);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 32px;
+
+    border-radius: 12px 12px 0 0;
+    border:  1px solid var(--dark-12);
+}
+
+.nav-item {
+    padding: 30px 40px;
+    border-right: 1px solid var(--dark-12);
+    color: var(--grey-70);
+}
+
+.nav-item:first-child {
+    padding: 30px 50px;
+    border-radius: 12px 0 0 0;
+}
+
+.nav-item:last-child {
+    border-right: none;
+    border-radius: 0 12px 0 0;
+}
+
+.nav-item.active {
+    background-color: var(--dark-08);
+    color: var(--white-color);
+}
+
+button {
+    display: flex;
+    align-items: center;
+
+    background-color: var(--dark-12);
+    color: var(--white-color);
+    padding: 16px 24px 16px 24px;
+    border: 1px solid;
+    border-image-source: linear-gradient(135.66deg, #2F2F37 28.87%, rgba(47, 47, 55, 0) 76.42%);
+    border-radius: 10px;
+}
+/* End Header */
+
+/* Start Section Introduction */
+.introduction-title {
+    position: relative;
+    font-family: "Manrope SemiBold", sans-serif;
+    font-size: 80px;
+    color: var(--grey-90);  
+}
+
+.introduction-subtitle {
+    position: absolute;
+    top: -40px;
+
+    font-family: "Manrope Regular", sans-serif;
+    font-size: 22px;
+    color:var(--grey-40) 
+}
+
+.abstract-image {
+    height: 346px;
+    width: 346px;
+    margin-right: 110px;
+}
+
+.text-n-button{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.introduction-text {
+    font-family: "Manrope SemiBold", sans-serif;
+    font-size: 58px;
+}
+
+.link-button {
+    width: 130px;
+    height: 66px;   
+    padding: 18px 50px 18px 50px;   
+    border-radius: 100px;
+    box-shadow: 4px 4px 17.399999618530273px 0px #FFFFFF47 inset;
+    background: var(--purple-55);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.running-line {
+    position: relative;
+    width: 100vw;
+    max-width: 100%;
+    height: 80px;
+    overflow-x: hidden;
+
+    border-block: 1px solid var(--dark-12);
+}
+
+.track {
+    position: absolute;
+    white-space: nowrap;
+    will-change: transform;
+    /* animation: marquee 2s linear infinite; */
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Manrope Regular", sans-serif;
+    font-size: 18px;
+    color: var(--purple-90);
+}
+
+.content li::before{
+    content: url("/icons/star.svg");
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    margin-left: 40px;
+}
+
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+.collage {
+    background-image: url("/images/Container.png");
+}
+/* End Section Introduction*/
+
+/* Start Section About */
+.about{
+    margin-top: 200px;
+}
+
+.section-title {
+    position: relative;
+    font-family: "Manrope SemiBold", sans-serif;
+    font-size: 58px; 
+}
+
+.section-subtitle {
+    position: absolute;
+    top: -25px;
+
+    font-family: "Manrope SemiBold", sans-serif;
+    font-size: 20px;
+    color:var(--grey-50) 
+}
+
+.button-text::after{
+    content: url("/icons/arr.svg");
+    margin-left: 5px;
+    align-self: center;
+}
+
+.container-header {
+    padding-bottom: 50px;
+    margin-bottom: 70px;
+    margin-top: 200px;
+    border-bottom: 1px solid var(--dark-12);
+}
+
+.info-container {
+    border: 1px solid var(--dark-12);
+    border-radius: 20px;
+    margin-left: 20px;
+}
+
+.intro-container {
+    padding: 40px;
+    border-bottom: 1px solid var(--dark-12);
+}
+.info-title {
+    display: flex;
+    align-items: center;
+    font-family: "Manrope Regular", sans-serif;
+    font-size: 30px;
+    color: var(--grey-80);
+    margin-bottom: 20px;
+}
+
+.info-title::before {
+    content: url('/icons/star2.svg');
+    margin-right: 10px;
+}
+
+.intro-text {
+    font-family: "Manrope Regular", sans-serif;
+    font-size: 18px;
+    color: var(--grey-70);
+}
+
+.contact-container {
+    padding: 40px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.contact-text {
+    font-family: "Manrope Regular", sans-serif;
+    font-size: 18px;
+    color: var(--grey-90);
+}
+
+.contact-link {
+    font-family: "Manrope Regular", sans-serif;
+    font-size: 20px;
+    color: var(--grey-70);
+
+    text-decoration: none;
+}
+
+.group-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.group-social-buttons {
+    display: flex;
+    justify-content: space-between;
+
+    border: 1px solid var(--dark-12);
+    border-radius: 100px;
+    padding: 10px;
+}
+
+.social-button {
+    border: 1px solid;
+    border-image-source: linear-gradient(180deg, #2F2F37 27.85%, rgba(47, 47, 55, 0) 100%);
+    padding: 14px;
+    background-color: var(--dark-12);
+    border-radius: 100px;
+}
+
+.social-button:not(:last-child) {
+    margin-right: 10px;
+}
+
+.group-actions-buttons {
+    display: flex;
+}
+
+.group-actions-buttons button:first-child{
+    padding: 18px 63px;
+    margin-right: 20px;
+}
+
+.group-actions-buttons button:last-child{
+    padding: 18px 50px;
+}
+/* End Section About */
+
+/* Start Section Services */
+.services {
+    margin-top: 200px;
+}
+
+.group-switch-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border: 1px solid var(--dark-12);
+    border-radius: 100px;
+    padding: 10px;
+    margin-right: 20px;
+}
+
+.switch-button {
+    padding: 14px;
+    border-radius: 100px;
+    border: 1px solid var(--dark-12);   
+}
+
+.switch-button:first-child {
+    margin-right: 10px;
+}
+
+.services-container {
+    margin-right: 50px;
+    width: 773px;
+}
+
+.services-group {
+    display: flex;
+    align-items: center;
+}
+
+.services-title {
+    font-family: "Manrope SemiBold", sans-serif;
+    font-size: 44px;
+    color: var(--grey-50);
+    margin-right: 16px;
+}
+
+.services-text {
+    margin-top: 16px;
+    margin-bottom: 50px;
+    font-family: "Manrope Regular", sans-serif;
+    font-size: 18px;
+    color: var(--grey-50);
+ }
+
+.services-list-title {
+    font-family: "Manrope Regular", sans-serif;
+    font-size: 18px;
+    color: var(--grey-80);
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.services-list-item {
+    font-family: "Manrope Regular", sans-serif;
+    font-size: 18px;
+    color: var(--grey-70);
+    text-transform: uppercase;
+
+    display: flex;
+    align-items: center;
+
+    border:1px solid var(--dark-12);
+    border-radius: 20px;
+
+    padding: 20px 24px;
+    margin: 10px 0;
+}
+
+.services-list-item::before{
+    content: url("/icons/star.svg");
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.services-image {
+    height: 625px;
+    width: 773px;
+    border-radius: 20px 20px 20px 100px;
+}
+/* End Section Services */
+
+/* Start Section Portfolio */
+.carousel{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-image {
+    border-radius: 20px;
+    height: 519px;
+    width: 499px;
+    object-fit: cover;
+}
+
+.card-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-top: 19px;
+}
+
+.card-title {
+    font-family: "Manrope Regular", sans-serif;
+    font-size: 20px;
+    color: var(--grey-80);
+    margin-bottom: 4px;
+}
+
+.card-subtitle {
+    font-family: "Manrope Regular", sans-serif;
+    font-size: 18px;
+    color: var(--grey-50);    
+}
+
+.card-link {
+    padding-bottom: 6px;
+    text-decoration: none;
+    border-bottom: 1px solid #2F2F37;
+    color: var(--grey-95);
+}
+
+.card-link::after{
+    content: url("/icons/arrow.svg");
+    margin-left: 10px;
+}
+/* End Section Portfolio */
+/* Start Section FAQ'S */
+.no-bottom-margin {
+    margin-bottom: 0;
+}
+
+.faqs {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.faq {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding: 42px 50px;
+}
+
+.faq:nth-child(2n+1) {
+    border-right: 1px solid var(--dark-12);
+}
+
+.faq:nth-last-child(n+2) {
+    border-bottom: 1px solid var(--dark-12);
+}
+
+.question {
+    font-family: "Manrope Regular", sans-serif;
+    font-size: 20px;
+    color: var(--grey-70);
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    width: 600px;
+}
+
+.answer {
+    font-family: "Manrope Regular", sans-serif;
+    font-size: 18px;
+    color: var(--grey-50);
+}
+
+.up-down-button {
+    padding: 16px 14px;
+    border-radius: 100px;
+    background-color: var(--black-color);
+    border: 1px solid var(--dark-12);
+}
+
+.none {
+    display: none;
+}
+/* End Section FAQ'S */
