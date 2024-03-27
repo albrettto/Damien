@@ -54,11 +54,19 @@
     --grey-99: #FCFCFD;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: var(--black-color);
     color: var(--white-color);
     list-style-type: none;
     font-family: "Manrope Regular", sans-serif;
+}
+
+a {
+    text-decoration: none;
 }
 
 /* Start Header */
@@ -94,6 +102,9 @@ nav {
     padding: 30px 40px;
     border-right: 1px solid var(--dark-12);
     color: var(--grey-70);
+
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .nav-item:first-child {
@@ -119,8 +130,10 @@ button {
     color: var(--white-color);
     padding: 16px 24px 16px 24px;
     border: 1px solid;
-    border-image-source: linear-gradient(135.66deg, #2F2F37 28.87%, rgba(47, 47, 55, 0) 76.42%);
+    border-image: linear-gradient(135.66deg, #2F2F37 28.87%, rgba(47, 47, 55, 0) 76.42%);
     border-radius: 10px;
+
+    cursor: pointer;
 }
 /* End Header */
 
@@ -172,29 +185,64 @@ button {
 }
 
 .running-line {
-    position: relative;
+    display: flex;
+    align-items: center;
     width: 100vw;
     max-width: 100%;
     height: 80px;
-    overflow-x: hidden;
 
+    background-color: var(--dark-06);
     border-block: 1px solid var(--dark-12);
 }
 
 .track {
-    position: absolute;
-    white-space: nowrap;
+    display: flex;
+    overflow: hidden;
     will-change: transform;
-    /* animation: marquee 2s linear infinite; */
 }
 
 .content {
+    white-space: nowrap;
+
     display: flex;
     justify-content: space-between;
-    align-items: center;
     font-family: "Manrope Regular", sans-serif;
     font-size: 18px;
     color: var(--purple-90);
+}
+
+.content1 {
+    animation: marquee1 20s infinite linear;
+    animation-delay: -20s;
+}
+
+.content2 {
+    animation: marquee2 20s infinite linear;
+    animation-delay: -10s;
+}
+
+@keyframes marquee1 {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes marquee2 {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-200%);
+    }
+}
+
+
+.content li{
+    display: flex;
+    align-items: center;
 }
 
 .content li::before{
@@ -211,8 +259,62 @@ button {
   }
 
 .collage {
-    background-image: url("/images/Container.png");
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    height: 512px;
 }
+
+.ph {
+    position: absolute;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.ph1 {
+    width: 520px;
+    height: 354px; 
+    left: 0;   
+}
+
+.ph2 {
+    width: 653px;
+    height: 512px;
+
+    left: 540px;
+
+}
+
+.ph3 {
+    width: 390px;
+    height: 293px;
+    left: 1206px;  
+}
+
+.ph4 {
+    width: 170px;
+    height: 143px;
+    top: 369px;
+    left: 1px;
+}
+
+.ph5 {
+    background-color: var(--black-color);
+    padding: 15px 15px 0 15px;
+    width: 607px;
+    height: 369px;
+    top: 143px;
+    left: 170px;
+}
+
+.ph6 {
+    width: 390px;
+    height: 205px;
+    top: 307px;
+    left: 1206px;
+}
+
 /* End Section Introduction*/
 
 /* Start Section About */
@@ -258,6 +360,7 @@ button {
     padding: 40px;
     border-bottom: 1px solid var(--dark-12);
 }
+
 .info-title {
     display: flex;
     align-items: center;
@@ -359,6 +462,10 @@ button {
     margin-right: 20px;
 }
 
+.mob-buttons {
+    display: none;
+}
+
 .switch-button {
     padding: 14px;
     border-radius: 100px;
@@ -433,14 +540,28 @@ ul{
     height: 625px;
     width: 773px;
     border-radius: 20px 20px 20px 100px;
+    object-fit: cover;
 }
 /* End Section Services */
 
 /* Start Section Portfolio */
-.carousel{
-    display: flex;
-    justify-content: space-between;
-}
+  .wrapper .carousel{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 3) - 30px);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 35px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+  .carousel.no-transition {
+    scroll-behavior: auto;
+  }
 
 .card-image {
     border-radius: 20px;
@@ -481,6 +602,7 @@ ul{
     margin-left: 10px;
 }
 /* End Section Portfolio */
+
 /* Start Section FAQ'S */
 .no-bottom-margin {
     margin-bottom: 0;
@@ -502,7 +624,7 @@ ul{
     border-right: 1px solid var(--dark-12);
 }
 
-.faq:nth-last-child(n+2) {
+.faq:nth-last-child(n+3) {
     border-bottom: 1px solid var(--dark-12);
 }
 
@@ -511,24 +633,205 @@ ul{
     font-size: 20px;
     color: var(--grey-70);
     text-transform: uppercase;
-    margin-bottom: 30px;
-    width: 600px;
 }
 
 .answer {
     font-family: "Manrope Regular", sans-serif;
     font-size: 18px;
     color: var(--grey-50);
+
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
 }
 
 .up-down-button {
-    padding: 16px 14px;
+    padding: 16px;
     border-radius: 100px;
     background-color: var(--black-color);
     border: 1px solid var(--dark-12);
+
+    background-image: url(/icons/down.svg);
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .none {
     display: none;
 }
 /* End Section FAQ'S */
+
+/* Start Section Testimonials */
+.testimonials-title {
+    font-family: "Manrope Regular", sans-serif;
+    font-size: 18px;
+    color: var(--grey-40);    
+}
+
+.testimonials-number {
+    font-family: "Manrope Regular", sans-serif;
+    font-size: 28px;
+    color: var(--grey-80);    
+    
+}
+
+.reviews {
+    /* display: flex; */
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 3) - 20px);
+    gap: 30px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.review-card {
+    width: 512px;
+    height: 322px;
+    padding: 40px;
+    border-radius: 12px;
+    background-color: var(--dark-06);
+    background-image: url("/images/abs5.svg");
+    background-repeat: no-repeat;
+    background-size: 1100px 940px;
+    background-position-x: -300px;
+    background-position-y: -250px;
+    
+}
+
+.review-person-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.review-person-name {
+    font-family: "Manrope Regular", sans-serif;
+    font-size: 20px;
+    color: var(--grey-90);    
+}
+
+.review-person-location {
+    font-family: "Manrope Regular", sans-serif;
+    font-size: 18px;
+    color: var(--grey-40);    
+}
+
+.review-rating {
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    gap: 5px;
+}
+
+.review-text {
+    font-family: "Manrope Regular", sans-serif;
+    font-size: 20px;
+    color: var(--grey-90);
+}
+/* End Section Testimonials */
+
+.damien {    
+    margin: 0px 165px;
+    display: flex;
+    justify-content: end;
+    margin-top: 200px;
+    font-family: "Manrope Bold", sans-serif;
+    font-size: 280px;
+    color: var(--dark-15);    
+}
+
+/* Start Section Footer */
+.footer-container {
+    border-bottom: 1px solid var(--dark-12);
+}
+
+.footer-actions {
+    padding: 100px 80px;
+    border-inline: 1px solid var(--dark-12);
+}
+
+.footer-actions-text {
+    font-family: "Manrope Regular", sans-serif;
+    font-size: 20px;
+    color:var(--grey-50);
+    text-transform: uppercase;
+    margin-bottom: 60px;
+}
+
+.footer-links-container{
+    padding-inline: 80px;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 110px;
+    /* border-right: 1px solid var(--dark-12); */
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 12px;
+
+    font-family: "Manrope Regular", sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.footer-links-title{
+    color: var(--grey-50);
+    margin-bottom: 20px;   
+}
+
+.footer-link {
+    color: var(--grey-95);    
+    text-decoration: none;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--dark-20);
+}
+
+.footer{
+    margin-top: 20px;
+}
+
+.doc-links {
+    display: flex;
+    gap: 11px;
+}
+
+.footer-text {
+    font-family: "Manrope Regular", sans-serif;
+    font-size: 18px;
+    color:var(--grey-50);
+    text-decoration: none;
+}
+
+.footer-text:first-child {
+    border-right: 1px solid var(--dark-12);
+    padding-right: 11px;
+}
+
+/* End Section Footer */
+
+
+.slider-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+
+#slides-container {
+    display: flex;
+    overflow: hidden;
+    scroll-behavior: smooth;
+  }
+
+.slide {
+    display: flex;
+    flex: 1 0 100%;
+  }
+
+  .hamburger {
+    display: none;
+  }

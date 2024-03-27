@@ -1,0 +1,164 @@
+    /* Start Section Contact me */
+    .contact-section {
+        margin-top: 100px;
+    }
+
+    .contact {
+        background-image: url('/images/contactme.png');
+        background-position: center;
+        background-repeat:no-repeat;
+        background-size: contain;
+        height: 746px;
+    }
+
+    .flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .contactme {
+        /* width: 1100px; */
+    }
+
+    .column {
+        flex-direction: column;
+        justify-content: space-between;
+        width: 250px;
+    }
+
+    .contact-text {
+        width: 1096px;
+        margin-top: 16px;
+        font-family: "Manrope Regular", sans-serif;
+        font-size: 18px;
+        color: var(--grey-50);
+    }
+
+    .flex .column .group-social-buttons {
+        margin-top: 94px;
+    }
+
+    .flex .column .group-social-buttons .social-button {
+        padding: 24px;
+    }
+
+    .hint {
+        text-transform:uppercase;
+        font-size: 18px;
+        color: var(--grey-50);
+        margin-bottom: 31px;
+        width: 200px;
+    }
+
+    .line {
+        /* padding-bottom: 10px; */
+        /* width: 100%; */
+        margin-top: 100px;
+        margin-bottom: 80px;
+        border-bottom: 1px solid var(--dark-12);
+    }
+
+    .contact-information {
+        display: grid;
+        grid-template-columns: 535px 1fr;
+        border-bottom: 1px solid var(--dark-12);
+        padding-bottom: 80px;
+        margin-bottom: 80px;
+    }
+
+    .contact-information-info {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        gap: 30px;
+    }
+
+    .contact-information-title {
+        font-family: "Manrope Medium", sans-serif;
+        font-size: 44px;
+        text-transform: uppercase;
+        color: var(--grey-50);
+    }
+
+    .contact-information-text {
+        font-size: 18px;
+        color: var(--grey-50);
+    }
+
+    .contact-information-links {
+        display: flex;
+        gap: 50px;
+        margin-left: 80px;
+    }
+
+    .contact-information-link {
+        font-size: 18px;
+        color: var(--grey-95);   
+        
+        padding-bottom: 6px;
+        border-bottom: 1px solid var(--dark-20);
+    }
+
+    .contact-information-link:after {
+        content: url('/icons/arrow.svg');
+        margin-left: 10px;
+                
+    }
+
+    form {
+        padding-left: 80px;
+    }
+
+    .form-section {
+        display: grid;
+        grid-template-columns: 535px 1fr;
+        margin-bottom: 200px;
+    }
+    
+    .row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+    }
+    
+    .col {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 50px;
+        width: 100%;
+
+    }
+
+    label {
+        font-size: 18px;
+        color: var(--grey-90);
+        margin-bottom: 10px;
+    }
+
+    input {
+        background: transparent;
+        color: var(--grey-95);
+        border: none;
+        border-bottom: 1px solid var(--dark-20);
+        padding: 14px 0;
+    }
+
+    input:active {
+        border: none;
+    }
+
+    input::placeholder{
+        font-size: 22px;
+        color: var(--grey-40);
+    }
+
+    a.text-n-button {
+        display: inline-flex;
+        text-decoration: none;
+        color: var(--white);
+        border-bottom: 1px solid var(--dark-12);
+    }
+    /* End Section Contact me */
